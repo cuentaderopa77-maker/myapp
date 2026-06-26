@@ -285,8 +285,6 @@ class _MobileBanner2 extends State<MobileBanner2> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 20),
-                    const SizedBox(height: 20),
                     Expanded(
                       child: PageView(
                         controller: _pageController,
@@ -445,10 +443,9 @@ Container cardService(
   onPressed,
 ) {
   return Container(
-    margin: EdgeInsets.all(20),
-    padding: EdgeInsets.all(10),
+    margin: EdgeInsets.all(10),
     width: 300,
-    height: 470,
+    height: 300,
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(12),
@@ -456,16 +453,16 @@ Container cardService(
     child: Column(
       children: [
         Expanded(
-          flex: 1,
+          flex: 0,
           child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(2),
-              child: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(imagePath),
-                    // Para cubrir todo el contenedor
-                  ),
+            child: Container(
+              width: 300,
+              height: 381,
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(242, 250, 250, 250),
+                image: DecorationImage(
+                  image: AssetImage(imagePath),
+                  // Para cubrir todo el contenedor
                 ),
               ),
             ),
@@ -474,30 +471,27 @@ Container cardService(
         Expanded(
           child: Column(
             children: [
-              Expanded(
-                flex: 2,
-                child: Column(
-                  children: [
-                    const SizedBox(height: 15),
-                    Text(
-                      title,
+              Column(
+                children: [
+                  const SizedBox(height: 15),
+                  Text(
+                    title,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      subtitle,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w900,
-                      ),
+                      style: const TextStyle(fontSize: 18),
                     ),
-                    const SizedBox(height: 15),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        subtitle,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(fontSize: 18),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               /*Expanded(
                 flex: 1,
