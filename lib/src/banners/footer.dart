@@ -111,18 +111,6 @@ class DesktopFooter extends StatelessWidget {
                 "11 6876-7790",
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
-              Text(
-                "Contacto",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                "voyagercontacto@gmail.com",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
             ],
           ),
           Column(

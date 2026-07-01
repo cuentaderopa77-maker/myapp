@@ -26,33 +26,44 @@ class DesktopBanner2 extends StatelessWidget {
     return Container(
       color: Colors.white,
       width: double.infinity,
-      height: 850,
+      height: 1020,
       child: Column(
         children: [
+          Container(
+            width: double.infinity,
+            height: 380,
+            decoration: BoxDecoration(
+              color: Colors.grey,
+              image: DecorationImage(
+                image: AssetImage("assets/images/glasseshd.webp"),
+                fit: BoxFit.cover,
+                alignment: Alignment.topCenter,
+              ),
+            ),
+          ),
+          SizedBox(height: 15),
+          Text("MUJER", style: TextStyle(color: Colors.black, fontSize: 16)),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              "Pre-Invierno 2026",
+              style: TextStyle(color: Colors.black, fontSize: 32),
+            ),
+          ),
           Expanded(
             child: Center(
               child: SizedBox(
-                width: 1200,
+                width: 1500,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 30),
-                    const Text(
-                      'Nuestros Servicios',
-                      style: TextStyle(
-                        fontSize: 35,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black87,
-                      ),
-                    ),
-                    const SizedBox(height: 50),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         cardService(
-                          'assets/images/campera2.webp',
-                          'CAMPERA',
-                          '\$27.000,00',
+                          'assets/images/cuello2.webp',
+                          'KNITTED TURTLENECK',
+                          '\$20.000,00',
                           () {
                             /*Navigator.pushReplacement(
                             context,
@@ -69,9 +80,9 @@ class DesktopBanner2 extends StatelessWidget {
                           },
                         ),
                         cardService(
-                          'assets/images/software.webp',
-                          'Programación web',
-                          'Diseño y desarrollo de paginas web, portafolios personales, landing pages.',
+                          'assets/images/sweater2.webp',
+                          'SWEATER',
+                          '\$18.000,00',
                           () {
                             /*Navigator.pushReplacement(
                             context,
@@ -88,9 +99,9 @@ class DesktopBanner2 extends StatelessWidget {
                           },
                         ),
                         cardService(
-                          'assets/images/imagenpers.webp',
-                          'Imagen personal',
-                          'Si queres tener tu marca personal, te ayudamos a crear tu imagen en internet.',
+                          'assets/images/cuello.webp',
+                          'TURTLENECK SWEATER',
+                          '\$18.000,00',
                           () {},
                         ),
                       ],
@@ -125,8 +136,9 @@ class DesktopBanner2 extends StatelessWidget {
     onPressed,
   ) {
     return Container(
-      width: 300,
-      height: 450,
+      margin: EdgeInsets.all(10),
+      width: 400,
+      height: 500,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
@@ -134,16 +146,16 @@ class DesktopBanner2 extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
-            flex: 1,
+            flex: 0,
             child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(imagePath),
-                      // Para cubrir todo el contenedor
-                    ),
+              child: Container(
+                width: 300,
+                height: 381,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(240, 250, 250, 250),
+                  image: DecorationImage(
+                    image: AssetImage(imagePath),
+                    // Para cubrir todo el contenedor
                   ),
                 ),
               ),
@@ -152,28 +164,25 @@ class DesktopBanner2 extends StatelessWidget {
           Expanded(
             child: Column(
               children: [
-                Expanded(
-                  flex: 2,
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 15),
-                      Text(
-                        title,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
+                Column(
+                  children: [
+                    const SizedBox(height: 15),
+                    Text(
+                      title,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w900,
                       ),
-                      const SizedBox(height: 15),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Text(subtitle, textAlign: TextAlign.center),
-                      ),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(height: 15),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Text(subtitle, textAlign: TextAlign.center),
+                    ),
+                  ],
                 ),
-                Expanded(
+                /*Expanded(
                   flex: 1,
                   child: Center(
                     child: TextButton(
@@ -199,7 +208,7 @@ class DesktopBanner2 extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
+                ),*/
               ],
             ),
           ),

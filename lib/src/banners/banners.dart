@@ -24,30 +24,28 @@ class DesktopBanners extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(248, 255, 255, 255),
+      color: Colors.white,
       width: double.infinity,
-      height: 650,
+      height: 630,
       child: Column(
         children: [
+          SizedBox(height: 8),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Text(
+              "Explore la seccion de creadores",
+              style: TextStyle(color: Colors.black, fontSize: 35),
+            ),
+          ),
           Expanded(
             child: Center(
               child: SizedBox(
-                width: 1200,
+                width: 1700,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 30),
-                    const Text(
-                      'Nuestros Servicios',
-                      style: TextStyle(
-                        fontSize: 35,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black87,
-                      ),
-                    ),
-                    const SizedBox(height: 50),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         cardService(
                           'assets/images/campera2.webp',
@@ -69,9 +67,28 @@ class DesktopBanners extends StatelessWidget {
                           },
                         ),
                         cardService(
-                          'assets/images/software.webp',
-                          'Programación web',
-                          'Diseño y desarrollo de paginas web, portafolios personales, landing pages.',
+                          'assets/images/cardigan.webp',
+                          'CARDIGAN',
+                          '\$15.000,00',
+                          () {
+                            /*Navigator.pushReplacement(
+                            context,
+                            PageRouteBuilder(
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) =>
+                                      const SocialMediaScreenUi(),
+                              transitionsBuilder: (context, animation,
+                                  secondaryAnimation, child) {
+                                return child; // Sin animación
+                              },
+                            ),
+                          );*/
+                          },
+                        ),
+                        cardService(
+                          'assets/images/coat.webp',
+                          'SACO',
+                          '\$24.000,00',
                           () {
                             /*Navigator.pushReplacement(
                             context,
@@ -88,9 +105,9 @@ class DesktopBanners extends StatelessWidget {
                           },
                         ),
                         cardService(
-                          'assets/images/imagenpers.webp',
-                          'Imagen personal',
-                          'Si queres tener tu marca personal, te ayudamos a crear tu imagen en internet.',
+                          'assets/images/campera.webp',
+                          'CAMPERA',
+                          '\$22.000,00',
                           () {},
                         ),
                       ],
@@ -125,8 +142,9 @@ class DesktopBanners extends StatelessWidget {
     onPressed,
   ) {
     return Container(
-      width: 300,
-      height: 450,
+      margin: EdgeInsets.all(10),
+      width: 400,
+      height: 500,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
@@ -134,16 +152,16 @@ class DesktopBanners extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
-            flex: 1,
+            flex: 0,
             child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(imagePath),
-                      // Para cubrir todo el contenedor
-                    ),
+              child: Container(
+                width: 300,
+                height: 381,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(240, 250, 250, 250),
+                  image: DecorationImage(
+                    image: AssetImage(imagePath),
+                    // Para cubrir todo el contenedor
                   ),
                 ),
               ),
@@ -152,28 +170,25 @@ class DesktopBanners extends StatelessWidget {
           Expanded(
             child: Column(
               children: [
-                Expanded(
-                  flex: 2,
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 15),
-                      Text(
-                        title,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
+                Column(
+                  children: [
+                    const SizedBox(height: 15),
+                    Text(
+                      title,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w900,
                       ),
-                      const SizedBox(height: 15),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Text(subtitle, textAlign: TextAlign.center),
-                      ),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(height: 15),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Text(subtitle, textAlign: TextAlign.center),
+                    ),
+                  ],
                 ),
-                Expanded(
+                /*Expanded(
                   flex: 1,
                   child: Center(
                     child: TextButton(
@@ -199,7 +214,7 @@ class DesktopBanners extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
+                ),*/
               ],
             ),
           ),
@@ -451,7 +466,7 @@ Container cardService(
               width: 300,
               height: 381,
               decoration: BoxDecoration(
-                color: const Color.fromARGB(242, 250, 250, 250),
+                color: const Color.fromARGB(240, 250, 250, 250),
                 image: DecorationImage(
                   image: AssetImage(imagePath),
                   // Para cubrir todo el contenedor
